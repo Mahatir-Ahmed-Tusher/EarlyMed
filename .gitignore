@@ -1,0 +1,91 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments (project-specific)
+venv/
+*/venv/
+diagnobot/
+medicare/
+medilexica/
+drug/
+autism/
+tumor/
+all/
+alzheimers/
+retinopathy/
+pneumo/
+heart/
+alzh/
+bcancer/
+diabetes/
+stroke/
+specialist/
+optiscan/
+auth/
+# FAISS index files
+faiss_index/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Node.js dependencies and build output
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Environment variables
+.env
+*.env
+
+# VS Code and other editor settings
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# PyInstaller
+*.manifest
+*.spec
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pydantic cache
+__pydantic_cache__/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Python dependency logs
+pip-log.txt
+
+# Compiled C extensions
+*.so
