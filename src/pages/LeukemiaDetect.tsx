@@ -61,9 +61,11 @@ const LeukemiaDetect: React.FC = () => {
     switch (prediction) {
       case 'nocancer':
         content = (
-          <div className={`p-4 rounded-2xl ${isDarkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-            <h3 className="font-semibold text-blue-500">✅ No Cancer Detected</h3>
-            <p><strong>What It Means:</strong> No signs of leukemia were detected in your blood sample.</p>
+          <div className={`rounded-lg shadow-md p-6 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}>
+            <h3 className="text-lg font-semibold text-green-500">
+              <i className="fas fa-check-circle mr-2"></i> No Cancer Detected
+            </h3>
+            <p className="mb-2"><strong>What It Means:</strong> No signs of leukemia were detected in your blood sample.</p>
             <p><strong>What to Do:</strong></p>
             <ul className="list-disc list-inside">
               <li>If you have symptoms like fatigue, fever, or bruising, consult a doctor.</li>
@@ -74,9 +76,11 @@ const LeukemiaDetect: React.FC = () => {
         break;
       case 'early':
         content = (
-          <div className={`p-4 rounded-2xl ${isDarkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-            <h3 className="font-semibold text-blue-500">🩺 Early Stage Leukemia</h3>
-            <p><strong>What It Means:</strong> Early signs of leukemia were detected, indicating the initial stage of the disease.</p>
+          <div className={`rounded-lg shadow-md p-6 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}>
+            <h3 className="text-lg font-semibold text-yellow-500">
+              <i className="fas fa-exclamation-triangle mr-2"></i> Early Stage Leukemia
+            </h3>
+            <p className="mb-2"><strong>What It Means:</strong> Early signs of leukemia were detected, indicating the initial stage of the disease.</p>
             <p><strong>What to Do:</strong></p>
             <ul className="list-disc list-inside">
               <li>Consult a hematologist for a detailed blood test and bone marrow examination.</li>
@@ -88,9 +92,11 @@ const LeukemiaDetect: React.FC = () => {
         break;
       case 'pre':
         content = (
-          <div className={`p-4 rounded-2xl ${isDarkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-            <h3 className="font-semibold text-blue-500">🩺 Pre-Leukemic Stage</h3>
-            <p><strong>What It Means:</strong> Your blood sample shows pre-leukemic changes, which may progress if untreated.</p>
+          <div className={`rounded-lg shadow-md p-6 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}>
+            <h3 className="text-lg font-semibold text-orange-500">
+              <i className="fas fa-exclamation-circle mr-2"></i> Pre-Leukemic Stage
+            </h3>
+            <p className="mb-2"><strong>What It Means:</strong> Your blood sample shows pre-leukemic changes, which may progress if untreated.</p>
             <p><strong>What to Do:</strong></p>
             <ul className="list-disc list-inside">
               <li>Seek a hematologist for further tests, such as a bone marrow biopsy.</li>
@@ -102,9 +108,11 @@ const LeukemiaDetect: React.FC = () => {
         break;
       case 'pro':
         content = (
-          <div className={`p-4 rounded-2xl ${isDarkMode ? 'bg-gray-700' : 'bg-gray-50'}`}>
-            <h3 className="font-semibold text-blue-500">🩺 Proliferative Stage Leukemia</h3>
-            <p><strong>What It Means:</strong> Advanced leukemia was detected, indicating a proliferative stage requiring immediate attention.</p>
+          <div className={`rounded-lg shadow-md p-6 ${isDarkMode ? 'bg-gray-800 text-white' : 'bg-white text-gray-800'}`}>
+            <h3 className="text-lg font-semibold text-red-500">
+              <i className="fas fa-skull-crossbones mr-2"></i> Proliferative Stage Leukemia
+            </h3>
+            <p className="mb-2"><strong>What It Means:</strong> Advanced leukemia was detected, indicating a proliferative stage requiring immediate attention.</p>
             <p><strong>What to Do:</strong></p>
             <ul className="list-disc list-inside">
               <li>Urgently consult a hematologist or oncologist for treatment planning.</li>
@@ -119,8 +127,10 @@ const LeukemiaDetect: React.FC = () => {
     }
 
     return (
-      <div className={`p-6 rounded-3xl shadow-lg mb-8 ${isDarkMode ? 'bg-gray-800 bg-opacity-90' : 'bg-white bg-opacity-90'}`}>
-        <h2 className="text-xl font-semibold text-center mb-4 text-blue-600">Understanding Your Diagnosis & Next Steps 🩺💡</h2>
+      <div className={`rounded-lg shadow-lg p-8 mb-6 ${isDarkMode ? 'bg-gray-700 text-white' : 'bg-white text-gray-800'}`}>
+        <h2 className="text-2xl font-semibold mb-4 text-center text-blue-600">
+          Understanding Your Diagnosis & Next Steps <i className="fas fa-info-circle"></i>
+        </h2>
         {content}
         <p className="text-center mt-4 font-semibold">
           For more information, refer to <a href="/diagnobot" className="text-blue-500 hover:underline">Diagnobot</a>.
@@ -130,123 +140,97 @@ const LeukemiaDetect: React.FC = () => {
   };
 
   return (
-    <div className={`min-h-screen flex flex-col ${isDarkMode ? 'bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-gray-100' : 'bg-gradient-to-br from-teal-100 via-green-100 to-orange-100 text-gray-800'}`}>
-      {/* Main Content */}
-      <main className="flex-grow container mx-auto px-4 py-8 max-w-4xl mt-20 mb-20">
-        {/* Logo Section */}
-        <div className="text-center mb-8">
+    <div className={`min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-gray-100 text-gray-900'} transition-colors duration-300`}>
+      <main className="container mx-auto px-4 py-12">
+        <header className="text-center mb-8">
           <img
             src="https://i.postimg.cc/mkWSQyp1/0b08d177-299c-4fcc-b978-540c2d143f10-removalai-preview.png"
             alt="EarlyMed Logo"
-            className="mx-auto max-w-xs"
+            className="mx-auto w-64"
           />
-        </div>
+          <h1 className="text-3xl font-bold mt-4">EarlyMed Leukemia Detection</h1>
+        </header>
 
-        {/* Intro Text */}
-        <div className={`text-center mb-8 p-6 rounded-3xl shadow-lg ${isDarkMode ? 'bg-gray-800 bg-opacity-90 text-gray-100' : 'bg-white bg-opacity-90 text-gray-800'}`}>
-          <h2 className="text-2xl font-bold mb-4">Welcome to EarlyMed Leukemia Detection! 🩺✨</h2>
-          <p className="mb-2">
-            Early detection of leukemia can be life-saving. Upload a blood sample image, and our AI-powered system will analyze it in seconds, providing a preliminary assessment of leukemia stages (No Cancer, Early, Pre-Leukemic, or Proliferative).
+        <section className={`mb-8 p-6 rounded-lg shadow-md ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+          <h2 className="text-xl font-semibold mb-4">Welcome!</h2>
+          <p className="mb-4">
+            Early detection of leukemia can be life-saving. Upload a blood sample image, and our AI-powered system will analyze it,
+            providing a preliminary assessment of leukemia stages.
           </p>
-        </div>
+        </section>
 
-        {/* Upload Section */}
-        <div className={`text-center p-6 rounded-3xl shadow-lg mb-8 ${isDarkMode ? 'bg-gray-800 bg-opacity-90' : 'bg-white bg-opacity-90'}`}>
-          <img
-            src="https://i.postimg.cc/MH6DvPBp/icon-3.png"
-            alt="Upload Icon"
-            className="mx-auto w-24 mb-4"
-          />
-          <form onSubmit={handleSubmit}>
-            <div className="mb-4">
-              <input
-                type="file"
-                id="file"
-                accept="image/*"
-                onChange={handleFileChange}
-                className={`w-full p-3 border-2 rounded-2xl ${isDarkMode ? 'border-gray-600 bg-gray-700 text-gray-100' : 'border-gray-300 bg-white text-gray-800'}`}
-                required
-              />
-            </div>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button
+        <section className={`mb-8 p-6 rounded-lg shadow-md ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+          <h2 className="text-xl font-semibold mb-4">Upload Blood Sample</h2>
+          <form onSubmit={handleSubmit} className="flex flex-col items-center">
+            <input
+              type="file"
+              id="file"
+              accept="image/*"
+              onChange={handleFileChange}
+              className={`mb-4 p-3 w-full rounded-md border ${isDarkMode ? 'border-gray-600 bg-gray-700 text-white' : 'border-gray-300'}`}
+              required
+            />
+            <button
               type="submit"
-              className="bg-gradient-to-r from-blue-600 to-green-500 text-white font-semibold py-3 px-6 rounded-2xl hover:from-blue-700 hover:to-green-600 transition-all duration-300 shadow-md hover:shadow-lg"
-              >
-              <i className="fas fa-upload mr-2"></i> Upload and Analyze
-              </button>
-              <a
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              Analyze
+            </button>
+            <a
               href="https://huggingface.co/spaces/MahatirTusher/EarlyMed-Acute-Lymphoblastic-Leukemia-Diagnosis"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-indigo-600 to-purple-500 text-white font-semibold py-3 px-6 rounded-2xl hover:from-indigo-700 hover:to-purple-600 transition-all duration-300 shadow-md hover:shadow-lg"
-              >
+              className="mt-4 text-blue-500 hover:underline"
+            >
               Try it on Huggingface
-              </a>
-            </div>
-            </form>
-          </div>
+            </a>
+          </form>
+        </section>
 
-          {/* Results Section */}
-          {error && (
-          <div className={`p-6 rounded-3xl shadow-lg mb-8 ${isDarkMode ? 'bg-red-900 bg-opacity-90 text-red-200' : 'bg-red-100 bg-opacity-90 text-red-800'}`}>
-            <p>{error}</p>
+        {error && (
+          <div className={`p-4 rounded-md bg-red-100 text-red-800 mb-4 ${isDarkMode ? 'bg-red-900 text-red-100' : ''}`}>
+            {error}
           </div>
         )}
+
         {result && (
-          <div className={`p-6 rounded-3xl shadow-lg ${isDarkMode ? 'bg-gray-800 bg-opacity-90' : 'bg-white bg-opacity-90'}`}>
-            <h3 className="text-xl font-semibold text-center mb-4">Analysis Results</h3>
-            <div className="text-center">
-              <h4 className="text-green-500 text-lg mb-2">
-                <i className="fas fa-check-circle mr-2"></i> {result.prediction}
-              </h4>
-              <p>Confidence: {(result.confidence * 100).toFixed(2)}%</p>
-              <div className={`h-3 rounded-full overflow-hidden mt-2 mb-4 ${isDarkMode ? 'bg-gray-700' : 'bg-gray-200'}`}>
-                <div
-                  className="h-full bg-gradient-to-r from-blue-600 to-green-500 rounded-full transition-all duration-300"
-                  style={{ width: `${result.confidence * 100}%` }}
-                ></div>
-              </div>
-              {file && (
-                <img
-                  src={URL.createObjectURL(file)}
-                  alt="Uploaded Blood Sample"
-                  className="mx-auto rounded-lg mt-4 max-w-full h-auto"
-                />
-              )}
+          <section className={`mb-8 p-6 rounded-lg shadow-md ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+            <h2 className="text-xl font-semibold mb-4">Analysis Result</h2>
+            <div className="mb-4">
+              <strong>Prediction:</strong> {result.prediction}
             </div>
-          </div>
+            <div>
+              <strong>Confidence:</strong> {(result.confidence * 100).toFixed(2)}%
+            </div>
+            {file && (
+              <img
+                src={URL.createObjectURL(file)}
+                alt="Uploaded Blood Sample"
+                className="mt-4 max-w-full rounded-md"
+              />
+            )}
+          </section>
         )}
 
-        {/* Dynamic Diagnosis Section */}
         {getDiagnosisContent()}
 
-        {/* How It Works Section */}
-        <div className={`p-6 rounded-3xl shadow-lg mb-8 ${isDarkMode ? 'bg-gray-800 bg-opacity-90' : 'bg-white bg-opacity-90'}`}>
-          <h2 className="text-xl font-semibold text-center mb-4 text-blue-600">How Does EarlyMed Leukemia Detection Work? 🤖🩺</h2>
-          <div className="space-y-4">
-            <p>Our AI-powered tool analyzes blood sample images to provide a preliminary assessment of leukemia stages in seconds. Here’s how:</p>
-            <h3 className="font-semibold text-blue-500">🔍 Step-by-Step Process</h3>
-            <p><strong>1️⃣ Upload Your Blood Sample:</strong> Upload a clear image of your blood sample.</p>
-            <p><strong>2️⃣ AI-Powered Image Processing:</strong> Our deep learning model, trained on thousands of blood samples, processes your image.</p>
-            <p><strong>3️⃣ Classification & Prediction:</strong> The model classifies the image into No Cancer, Early, Pre-Leukemic, or Proliferative stages, with a confidence score.</p>
-            <p><strong>4️⃣ Instant Results:</strong> Results are displayed in seconds. Consult a doctor for a detailed evaluation.</p>
-            <h3 className="font-semibold text-blue-500">🛡️ Why Is It Reliable?</h3>
-            <ul className="list-disc list-inside">
-              <li>Trained on real medical data for high accuracy.</li>
-              <li>Uses a Vision Transformer (ViT) model for precision.</li>
-              <li>Fast, accessible, and continuously improving.</li>
-            </ul>
-            <p className="text-center font-semibold mt-4">⚠️ Always consult medical professionals for guidance.</p>
-          </div>
-        </div>
+        <section className={`mb-8 p-6 rounded-lg shadow-md ${isDarkMode ? 'bg-gray-800' : 'bg-white'}`}>
+          <h2 className="text-xl font-semibold mb-4">How It Works</h2>
+          <p className="mb-2">Our AI-powered tool analyzes blood sample images to provide a preliminary assessment of leukemia stages.</p>
+          <ol className="list-decimal list-inside">
+            <li>Upload Your Blood Sample</li>
+            <li>AI-Powered Image Processing</li>
+            <li>Classification & Prediction</li>
+            <li>Instant Results</li>
+          </ol>
+        </section>
 
-        {/* Disclaimer */}
-        <div className={`p-6 rounded-3xl shadow-lg border-l-4 border-yellow-500 ${isDarkMode ? 'bg-gray-800 bg-opacity-90' : 'bg-white bg-opacity-90'}`}>
-          <h3 className="font-semibold mb-2">⚠️ Disclaimer</h3>
-          <p>We strongly urge users to consult a healthcare professional for appropriate medical guidance after getting the diagnosis.</p>
-          <p>Developed by the team at VIT-AP University to empower individuals with AI-driven early detection and healthcare awareness.</p>
-        </div>
+        <footer className="p-4 text-center">
+          <p>
+            <i className="fas fa-exclamation-triangle"></i> Disclaimer: This tool is for preliminary assessment only. Consult a healthcare
+            professional for appropriate medical guidance.
+          </p>
+        </footer>
       </main>
     </div>
   );
